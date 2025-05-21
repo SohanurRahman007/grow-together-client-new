@@ -1,33 +1,58 @@
-import { useContext } from "react";
-import { Link } from "react-router";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
-    // const name = form.name.value;
-    // const photo = form.photo.value;
-    // const email = form.email.value;
-    // const password = form.password.value;
-    // console.log(name, photo, email, password);
 
     const formData = new FormData(form);
     const { email, password, ...userProfile } = Object.fromEntries(
       formData.entries()
     );
 
-    console.log(userProfile);
+    // ✅ Individual Password Validations
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long.");
+      return;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must include at least one uppercase letter.");
+      return;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setError("Password must include at least one lowercase letter.");
+      return;
+    }
+
+    if (!/[!@#$%^&*]/.test(password)) {
+      setError(
+        "Password must include at least one special character (!@#$%^&*)."
+      );
+      return;
+    }
 
     // create User
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-
-        // save Profile info in db
+        Swal.fire({
+          title: "Login successfully!",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+        console.log(result);
       })
       .catch((error) => {
         console.log(error);
@@ -150,6 +175,15 @@ const Register = () => {
               className="w-full px-8 btn py-3 font-semibold rounded-md dark:bg-green-600 dark:text-gray-50 border-none"
             />
           </form>
+          {/* Password error message */}
+          {error && (
+            <p className="text-red-500 text-sm font-medium text-center">
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className="text-green-600 text-sm text-center">{success}</p>
+          )}
         </div>
       </div>
     </div>

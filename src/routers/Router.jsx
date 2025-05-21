@@ -14,10 +14,11 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => fetch("http://localhost:3000/gardeners"),
         Component: Home,
       },
       {
-        path: "/gardenTip",
+        path: "/shareTip",
         Component: GardenTip,
       },
       {

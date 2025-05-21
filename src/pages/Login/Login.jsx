@@ -18,7 +18,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         Swal.fire({
-          title: "Logged out successfully!",
+          title: "Login successfully!",
           icon: "success",
           timer: 1500,
           showConfirmButton: false,

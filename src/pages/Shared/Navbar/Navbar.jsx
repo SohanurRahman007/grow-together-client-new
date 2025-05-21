@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [showLogout, setShowLogout] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
 
@@ -23,6 +24,10 @@ const Navbar = () => {
     }
   };
 
+  const handleAvatarClick = () => {
+    setShowLogout((prev) => !prev);
+  };
+
   const navItems = (
     <>
       <li>
@@ -30,10 +35,15 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/browseTips" className="text-xl font-semibold navLink">
+          Browse Tips
+        </NavLink>
+      </li>
 
       {user && (
         <li>
-          <NavLink to="/gardenTip" className="text-xl font-semibold navLink">
+          <NavLink to="/shareTip" className="text-xl font-semibold navLink">
             Share a Garden Tip
           </NavLink>
         </li>
@@ -109,37 +119,48 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
 
-        <div className="navbar-end gap-3">
-          <div className="w-10 rounded-sm">
-            {/* Tooltip */}
-            <div
-              className="tooltip tooltip-bottom"
-              data-tip={user?.displayName}
-            >
-              <button className="btn h-10 w-10 p-0 overflow-hidden">
-                {user?.photoURL ? (
-                  <img
-                    src={user.photoURL}
-                    alt="User Avatar"
-                    className="w-full h-full object-cover rounded-sm"
-                  />
-                ) : (
-                  <FaUserSecret className="text-white text-xl" />
-                )}
-              </button>
-            </div>
-          </div>
-
+        <div className="navbar-end gap-3 relative">
           {user ? (
-            <Link onClick={handleLogout} className="btn text-xl font-semibold">
-              Logout
-            </Link>
+            <div className="relative">
+              <div
+                className="tooltip tooltip-left"
+                data-tip={user?.displayName}
+              >
+                <button
+                  onClick={handleAvatarClick}
+                  className="btn h-10 w-10 p-0 overflow-hidden rounded-sm"
+                >
+                  {user?.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt="User Avatar"
+                      className="w-full h-full object-cover rounded-sm"
+                    />
+                  ) : (
+                    <FaUserSecret className="text-white text-xl" />
+                  )}
+                </button>
+              </div>
+
+              {/* Logout Dropdown */}
+              {showLogout && (
+                <div className="absolute -right-4 mt-2 bg-gray-50 text-white dark:bg-gray-800  border rounded shadow z-50">
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full px-4 py-2 cursor-pointer"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
           ) : (
             <Link to="/login" className="btn text-xl font-semibold">
               Login
             </Link>
           )}
 
+          {/* Theme Toggle */}
           <label className="flex cursor-pointer items-center gap-2">
             <input
               type="checkbox"

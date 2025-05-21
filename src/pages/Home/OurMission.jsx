@@ -9,11 +9,11 @@ import img5 from "../../assets/ourMission/5.jpg";
 const OurMission = () => {
   return (
     <>
-      <div>
+      <div className="">
         <h3 className="text-2xl md:text-4xl font-semibold mb-2 text-center text-green-700">
           Our Mission
         </h3>
-        <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300 text-lg">
+        <p className="max-w-3xl text-center mx-auto text-gray-700 dark:text-gray-300 text-sm">
           We are dedicated to promoting a greener planet through community tree
           planting, sustainable gardening practices, and spreading awareness
           about the importance of nature conservation for future generations.

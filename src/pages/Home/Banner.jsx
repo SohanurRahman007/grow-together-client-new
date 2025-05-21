@@ -41,7 +41,7 @@ const Banner = () => {
         interval={2000}
         infiniteLoop={true}
         showStatus={false}
-        className="md:h-[500px] h-[400px] rounded-sm "
+        className="md:h-[500px] h-[400px] rounded-sm shadow-2xl shadow-green-600"
       >
         {/* Slide 1 */}
         <div className="relative group md:h-[500px] ">

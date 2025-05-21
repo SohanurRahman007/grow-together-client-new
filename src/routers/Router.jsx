@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Shared/Error/ErrorPage";
 import GardenTip from "../pages/GardenTip/GardenTip";
+import ExploreGardener from "../pages/ExploreGardener/ExploreGardener";
 
 export const router = createBrowserRouter([
   {
@@ -14,12 +15,17 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/gardeners"),
+        loader: () => fetch("http://localhost:3000/gardeners/active"),
         Component: Home,
       },
       {
         path: "/shareTip",
         Component: GardenTip,
+      },
+      {
+        path: "/exploreGardener",
+        loader: () => fetch("http://localhost:3000/gardeners"),
+        Component: ExploreGardener,
       },
       {
         path: "/login",

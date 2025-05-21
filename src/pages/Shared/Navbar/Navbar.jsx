@@ -31,31 +31,34 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <NavLink to="/" className="text-xl font-semibold navLink">
+        <NavLink to="/" className="text-md font-semibold navLink">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/browseTips" className="text-xl font-semibold navLink">
+        <NavLink to="/browseTips" className="text-md font-semibold navLink">
           Browse Tips
         </NavLink>
       </li>
 
       {user && (
         <li>
-          <NavLink to="/shareTip" className="text-xl font-semibold navLink">
+          <NavLink to="/shareTip" className="text-md font-semibold navLink">
             Share a Garden Tip
           </NavLink>
         </li>
       )}
 
       <li>
-        <NavLink to="/gardener" className="text-xl font-semibold navLink">
+        <NavLink
+          to="/exploreGardener"
+          className="text-md font-semibold navLink"
+        >
           Explore Gardeners
         </NavLink>
       </li>
       <li>
-        <NavLink to="/myTip" className="text-xl font-semibold navLink">
+        <NavLink to="/myTip" className="text-md font-semibold navLink">
           My Tips
         </NavLink>
       </li>

@@ -1,6 +1,55 @@
-import { Link } from "react-router";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const { loginUser, googleLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // Login User
+    loginUser(email, password)
+      .then((result) => {
+        Swal.fire({
+          title: "Logged out successfully!",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+        console.log(result);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log(errorCode);
+      });
+  };
+
+  // Login with Google
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        Swal.fire({
+          title: "Login successfully!",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="my-7 flex flex-col">
       <div>
@@ -28,6 +77,7 @@ const Login = () => {
           </p>
           <div className="my-6 space-y-4">
             <button
+              onClick={handleGoogleLogin}
               aria-label="Login with Google"
               type="button"
               className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600 hover:bg-green-600 hover:text-white cursor-pointer transition-colors duration-300"
@@ -48,8 +98,7 @@ const Login = () => {
             <hr className="w-full dark:text-gray-600" />
           </div>
           <form
-            noValidate=""
-            action=""
+            onSubmit={handleLogin}
             className="space-y-8 p-4 transition-all duration-300 hover:shadow-sm  rounded-lg bg-white shadow-green-400"
           >
             <div className="space-y-4">

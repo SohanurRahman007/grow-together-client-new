@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo/logo.png";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { FaUserSecret } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -25,11 +30,15 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/gardenTip" className="text-xl font-semibold navLink">
-          Share a Garden Tip
-        </NavLink>
-      </li>
+
+      {user && (
+        <li>
+          <NavLink to="/gardenTip" className="text-xl font-semibold navLink">
+            Share a Garden Tip
+          </NavLink>
+        </li>
+      )}
+
       <li>
         <NavLink to="/gardener" className="text-xl font-semibold navLink">
           Explore Gardeners
@@ -42,6 +51,20 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      await Swal.fire({
+        title: "Logged out successfully!",
+        icon: "success",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <div>
@@ -87,9 +110,36 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end gap-3">
-          <Link to="/login" className="btn text-xl font-semibold">
-            Login
-          </Link>
+          <div className="w-10 rounded-sm">
+            {/* Tooltip */}
+            <div
+              className="tooltip tooltip-bottom"
+              data-tip={user?.displayName}
+            >
+              <button className="btn h-10 w-10 p-0 overflow-hidden">
+                {user?.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt="User Avatar"
+                    className="w-full h-full object-cover rounded-sm"
+                  />
+                ) : (
+                  <FaUserSecret className="text-white text-xl" />
+                )}
+              </button>
+            </div>
+          </div>
+
+          {user ? (
+            <Link onClick={handleLogout} className="btn text-xl font-semibold">
+              Logout
+            </Link>
+          ) : (
+            <Link to="/login" className="btn text-xl font-semibold">
+              Login
+            </Link>
+          )}
+
           <label className="flex cursor-pointer items-center gap-2">
             <input
               type="checkbox"

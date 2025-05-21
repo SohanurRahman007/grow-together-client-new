@@ -4,19 +4,30 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const photo = form.photo.value;
-    const email = form.email.value;
-    const password = form.password.value;
+    // const name = form.name.value;
+    // const photo = form.photo.value;
+    // const email = form.email.value;
+    // const password = form.password.value;
+    // console.log(name, photo, email, password);
 
-    console.log(name, photo, email, password);
+    const formData = new FormData(form);
+    const { email, password, ...userProfile } = Object.fromEntries(
+      formData.entries()
+    );
+
+    console.log(userProfile);
+
+    // create User
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+
+        // save Profile info in db
       })
       .catch((error) => {
         console.log(error);

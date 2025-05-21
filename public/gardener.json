@@ -1,0 +1,102 @@
+[
+  {
+    "id": "gardener001",
+    "name": "Rahim Uddin",
+    "age": 29,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "3 years in vertical gardening",
+    "image": "https://example.com/rahim.jpg",
+    "totalSharedTips": 5
+  },
+  {
+    "id": "gardener002",
+    "name": "Ayesha Siddiqua",
+    "age": 32,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "5 years in composting",
+    "image": "https://example.com/ayesha.jpg",
+    "totalSharedTips": 4
+  },
+  {
+    "id": "gardener003",
+    "name": "Imran Hossain",
+    "age": 35,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "4 years in organic farming",
+    "image": "https://example.com/imran.jpg",
+    "totalSharedTips": 6
+  },
+  {
+    "id": "gardener004",
+    "name": "Nusrat Jahan",
+    "age": 27,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "2 years in balcony gardening",
+    "image": "https://example.com/nusrat.jpg",
+    "totalSharedTips": 3
+  },
+  {
+    "id": "gardener005",
+    "name": "Jahidul Islam",
+    "age": 31,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "6 years in bonsai training",
+    "image": "https://example.com/jahidul.jpg",
+    "totalSharedTips": 8
+  },
+  {
+    "id": "gardener006",
+    "name": "Farhana Akter",
+    "age": 30,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "4 years in herb gardening",
+    "image": "https://example.com/farhana.jpg",
+    "totalSharedTips": 7
+  },
+  {
+    "id": "gardener007",
+    "name": "Kamrul Hasan",
+    "age": 38,
+    "gender": "Male",
+    "status": "Inactive",
+    "experience": "2 years in tree planting",
+    "image": "https://example.com/kamrul.jpg",
+    "totalSharedTips": 1
+  },
+  {
+    "id": "gardener008",
+    "name": "Ruma Sultana",
+    "age": 29,
+    "gender": "Female",
+    "status": "Inactive",
+    "experience": "3 years in eco education",
+    "image": "https://example.com/ruma.jpg",
+    "totalSharedTips": 2
+  },
+  {
+    "id": "gardener009",
+    "name": "Shakil Ahmed",
+    "age": 34,
+    "gender": "Male",
+    "status": "Inactive",
+    "experience": "4 years in rooftop gardening",
+    "image": "https://example.com/shakil.jpg",
+    "totalSharedTips": 3
+  },
+  {
+    "id": "gardener010",
+    "name": "Mehjabin Chowdhury",
+    "age": 26,
+    "gender": "Female",
+    "status": "Inactive",
+    "experience": "1 year in plant decoration",
+    "image": "https://example.com/mehjabin.jpg",
+    "totalSharedTips": 0
+  }
+]

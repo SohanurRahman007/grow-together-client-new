@@ -4,6 +4,7 @@ import OurMission from "./OurMission";
 import { Helmet } from "react-helmet-async";
 import Gardeners from "../../components/Gardeners/Gardeners";
 import { useLoaderData } from "react-router";
+import TrendingTips from "../../components/TrendingTips/TrendingTips";
 
 const Home = () => {
   const gardenerData = useLoaderData();
@@ -15,6 +16,7 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <Gardeners gardenerData={gardenerData}></Gardeners>
+      <TrendingTips></TrendingTips>
       <OurMission></OurMission>
     </div>
   );

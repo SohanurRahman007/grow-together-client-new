@@ -10,6 +10,7 @@ import BrowseTipsPage from "../pages/BrowseTipsPage/BrowseTipsPage";
 import TipDetailsPage from "../pages/TipDetailsPage/TipDetailsPage";
 import PrivetRoute from "./PrivetRoute";
 import MyTipsPage from "../pages/MyTipsPage/MyTipsPage";
+import UpdateTipPage from "../pages/UpdateTipPage/UpdateTipPage";
 // import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
@@ -51,6 +52,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <MyTipsPage></MyTipsPage>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/updateTip/:id",
+        element: (
+          <PrivetRoute>
+            <UpdateTipPage />
           </PrivetRoute>
         ),
       },

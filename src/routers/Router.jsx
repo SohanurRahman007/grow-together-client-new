@@ -8,6 +8,8 @@ import GardenTip from "../pages/GardenTip/GardenTip";
 import ExploreGardener from "../pages/ExploreGardener/ExploreGardener";
 import BrowseTipsPage from "../pages/BrowseTipsPage/BrowseTipsPage";
 import TipDetailsPage from "../pages/TipDetailsPage/TipDetailsPage";
+import PrivetRoute from "./PrivetRoute";
+// import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -37,7 +39,11 @@ export const router = createBrowserRouter([
         path: "/TipDetailsPage/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/shareTip/availability/${params.id}`),
-        element: <TipDetailsPage />,
+        element: (
+          <PrivetRoute>
+            <TipDetailsPage />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/login",

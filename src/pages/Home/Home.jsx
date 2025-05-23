@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import Gardeners from "../../components/Gardeners/Gardeners";
 import { useLoaderData } from "react-router";
 import TrendingTips from "../../components/TrendingTips/TrendingTips";
+import CostumerReview from "../../components/CostumerReview/CostumerReview";
 
 const Home = () => {
   const gardenerData = useLoaderData();
@@ -18,6 +19,7 @@ const Home = () => {
       <Gardeners gardenerData={gardenerData}></Gardeners>
       <TrendingTips></TrendingTips>
       <OurMission></OurMission>
+      <CostumerReview></CostumerReview>
     </div>
   );
 };

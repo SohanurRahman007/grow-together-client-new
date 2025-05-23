@@ -2,9 +2,14 @@ import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import Loading from "../../components/Loading/Loading";
 
 const GardenTip = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   console.log(user);
   const handleSharedTips = (e) => {
@@ -36,11 +41,12 @@ const GardenTip = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>GrowTogether | GardenTip</title>
       </Helmet>
-      <div className="my-7 flex flex-col">
+
+      <div className="my-7 flex flex-col ">
         <div>
           <img
             src="https://i.ibb.co/rRhWjx3D/soil-8080788-1280.jpg"
@@ -48,20 +54,34 @@ const GardenTip = () => {
             alt=""
           />
         </div>
-        <div className="card bg-base-100 w-full mx-auto md:w-5/12 shrink-0 shadow-2xl shadow-green-600">
-          <div className="w-full mx-auto rounded-b-md shadow-green-600 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
-            <h2 className="mb-3 text-3xl font-semibold text-center text-green-600">
-              Register now
-            </h2>
+
+        <h2 className="text-2xl md:text"></h2>
+
+        <h2 className="text-2xl md:text-4xl font-semibold text-center text-green-600 mt-10">
+          Share Your Green Wisdom
+        </h2>
+        <p className="text-sm text-center text-gray-700 dark:text-gray-200 max-w-xl mx-auto mt-4">
+          Share your personal gardening experiences and tips with fellow plant
+          lovers! Whether it's a secret compost recipe, seasonal planting
+          advice, or a clever watering trick — your insight can help someone
+          grow a greener, healthier garden.
+        </p>
+
+        <div className="card mt-10 md:mt-20  w-full mx-auto md:w-5/12 shrink-0 shadow-2xl shadow-green-600">
+          <div className="w-full mx-auto rounded-b-md shadow-green-600 sm:p-8  dark:text-gray-800">
+            <h2 className="mb-3 text-3xl font-semibold text-center text-green-600"></h2>
 
             <form
               onSubmit={handleSharedTips}
-              className="space-y-8 p-4 transition-all duration-300 hover:shadow-sm rounded-lg bg-white shadow-green-400"
+              className="space-y-8 p-4 transition-all duration-300 hover:shadow-sm rounded-lg dark:text-white shadow-green-400"
             >
               <div className="space-y-4">
                 {/* User Info (Read-only) */}
                 <div className="space-y-2">
-                  <label htmlFor="userName" className="block text-sm">
+                  <label
+                    htmlFor="userName"
+                    className="block text-gray-600 text-sm"
+                  >
                     User Name
                   </label>
                   <input
@@ -75,7 +95,10 @@ const GardenTip = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="userEmail" className="block text-sm">
+                  <label
+                    htmlFor="userEmail"
+                    className="block text-sm text-gray-600"
+                  >
                     Email
                   </label>
                   <input
@@ -90,7 +113,10 @@ const GardenTip = () => {
 
                 {/* Title */}
                 <div className="space-y-2">
-                  <label htmlFor="title" className="block text-sm">
+                  <label
+                    htmlFor="title"
+                    className="block text-sm text-gray-600"
+                  >
                     Title
                   </label>
                   <input
@@ -105,7 +131,10 @@ const GardenTip = () => {
 
                 {/* Plant Type / Topic */}
                 <div className="space-y-2">
-                  <label htmlFor="plantType" className="block text-sm">
+                  <label
+                    htmlFor="plantType"
+                    className="block text-sm text-gray-600"
+                  >
                     Plant Type / Topic
                   </label>
                   <input
@@ -120,7 +149,10 @@ const GardenTip = () => {
 
                 {/* Difficulty Level */}
                 <div className="space-y-2">
-                  <label htmlFor="difficulty" className="block text-sm">
+                  <label
+                    htmlFor="difficulty"
+                    className="block text-sm text-gray-600"
+                  >
                     Difficulty Level
                   </label>
                   <select
@@ -137,7 +169,10 @@ const GardenTip = () => {
 
                 {/* Image URL */}
                 <div className="space-y-2">
-                  <label htmlFor="imageUrl" className="block text-sm">
+                  <label
+                    htmlFor="imageUrl"
+                    className="block text-sm text-gray-600"
+                  >
                     Image URL
                   </label>
                   <input
@@ -151,7 +186,10 @@ const GardenTip = () => {
 
                 {/* Category */}
                 <div className="space-y-2">
-                  <label htmlFor="category" className="block text-sm">
+                  <label
+                    htmlFor="category"
+                    className="block text-sm text-gray-600"
+                  >
                     Category
                   </label>
                   <select
@@ -172,7 +210,10 @@ const GardenTip = () => {
 
                 {/* Availability */}
                 <div className="space-y-2">
-                  <label htmlFor="availability" className="block text-sm">
+                  <label
+                    htmlFor="availability"
+                    className="block text-sm text-gray-600"
+                  >
                     Availability
                   </label>
                   <select
@@ -189,7 +230,10 @@ const GardenTip = () => {
 
               {/* Description */}
               <div className="space-y-2">
-                <label htmlFor="description" className="block text-sm">
+                <label
+                  htmlFor="description"
+                  className="block text-sm text-gray-600"
+                >
                   Description
                 </label>
                 <textarea

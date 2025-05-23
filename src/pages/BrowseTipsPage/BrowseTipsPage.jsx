@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoEye } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import Loading from "../../components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const BrowseTipsPage = () => {
   const [tips, setTips] = useState([]);
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:3000/shareTip/availability")
@@ -17,8 +21,15 @@ const BrowseTipsPage = () => {
       });
   }, []);
 
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div>
+      <Helmet>
+        <title>GrowTogether | GardenTip</title>
+      </Helmet>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

@@ -36,8 +36,8 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/browseTips" className="text-md font-semibold navLink">
-          Browse Tips
+        <NavLink to="/browseTipsPage" className="text-md font-semibold navLink">
+          Browse Tips Page
         </NavLink>
       </li>
 

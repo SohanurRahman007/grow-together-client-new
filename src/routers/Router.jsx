@@ -9,6 +9,7 @@ import ExploreGardener from "../pages/ExploreGardener/ExploreGardener";
 import BrowseTipsPage from "../pages/BrowseTipsPage/BrowseTipsPage";
 import TipDetailsPage from "../pages/TipDetailsPage/TipDetailsPage";
 import PrivetRoute from "./PrivetRoute";
+import MyTipsPage from "../pages/MyTipsPage/MyTipsPage";
 // import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
@@ -42,6 +43,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <TipDetailsPage />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/myTipsPage",
+        element: (
+          <PrivetRoute>
+            <MyTipsPage></MyTipsPage>
           </PrivetRoute>
         ),
       },

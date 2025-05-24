@@ -18,7 +18,7 @@ const ExploreGardener = () => {
         <h2 className="text-4xl font-semibold text-green-600 text-center">
           Explore Gardeners
         </h2>
-        <p className="text-sm text-center text-gray-700 dark:text-white max-w-xl mx-auto mt-4">
+        <p className="text-sm text-center  w-4xl mb-6 max-w-xl mx-auto mt-4">
           Discover a diverse range of passionate gardeners from all backgrounds
           and specialties. In this section, you can explore profiles, learn from
           their experiences, and get inspired by their unique gardening journeys

@@ -6,7 +6,7 @@ const CostumerReview = () => {
       <h2 className="text-2xl md:text-4xl font-semibold text-center text-green-600 mt-10">
         What Gardeners Are Saying
       </h2>
-      <p className="text-sm text-center text-gray-700 dark:text-gray-200 max-w-xl mx-auto mt-4">
+      <p className="text-sm  text-center w-4xl  mb-6 max-w-xl mx-auto mt-4">
         Discover how our community of plant lovers is growing with GreenConnect!
         Read real experiences, success stories, and feedback from fellow
         gardeners who’ve used our tips to transform their green spaces.

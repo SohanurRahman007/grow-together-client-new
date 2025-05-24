@@ -14,6 +14,7 @@ const BrowseTipsPage = () => {
     let url = "http://localhost:3000/shareTip/availability";
     if (difficulty) {
       url += `?difficulty=${difficulty}`;
+      console.log("Fetching URL:", url);
     }
     fetch(url)
       .then((res) => res.json())
@@ -38,8 +39,27 @@ const BrowseTipsPage = () => {
   return (
     <div>
       <Helmet>
-        <title>GrowTogether | GardenTip</title>
+        <title>GrowTogether | Browse Garden Tips</title>
       </Helmet>
+
+      <div className="mt-10">
+        <img
+          src="https://i.ibb.co/0RrRc2bT/istockphoto-1161321111-612x612.jpg"
+          alt=""
+          className="min-w-full object-cover bg-cover h-80 rounded-sm shadow-2xl shadow-green-600"
+        />
+      </div>
+
+      <div>
+        <h2 className="text-2xl md:text-4xl font-semibold text-center text-green-600 mt-10">
+          Discover Gardening Tips
+        </h2>
+        <p className="text-sm text-center text-gray-700 dark:text-gray-200 max-w-xl mx-auto mt-4">
+          Explore a curated collection of gardening tips tailored for all
+          difficulty levels—from easy to hard. Grow your green thumb with
+          GrowTogether!
+        </p>
+      </div>
 
       <div className="my-4 text-gray-600 text-xl font-semibold">
         <label className="mr-2 font-semibold">Filter by Difficulty:</label>
@@ -63,6 +83,7 @@ const BrowseTipsPage = () => {
               <th>Image</th>
               <th>Title</th>
               <th>Category</th>
+              <th>Difficulty</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -81,6 +102,7 @@ const BrowseTipsPage = () => {
                 </td>
                 <td>{item.title}</td>
                 <td>{item.category}</td>
+                <td>{item.difficulty}</td>
                 <th>
                   <Link
                     to={`/TipDetailsPage/${item._id}`}

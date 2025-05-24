@@ -54,9 +54,6 @@ const GardenTip = () => {
             alt=""
           />
         </div>
-
-        <h2 className="text-2xl md:text"></h2>
-
         <h2 className="text-2xl md:text-4xl font-semibold text-center text-green-600 mt-10">
           Share Your Green Wisdom
         </h2>

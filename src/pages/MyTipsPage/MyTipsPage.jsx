@@ -63,7 +63,16 @@ const MyTipsPage = () => {
       <Helmet>
         <title>GrowTogether | Tip Details</title>
       </Helmet>
-      <div className="overflow-x-auto shadow-md shadow-green-600 rounded-md">
+
+      <div className="mt-10">
+        <img
+          src="https://i.ibb.co/SDjYDr9c/images-3.jpg"
+          alt=""
+          className="min-w-full object-cover bg-cover h-80 rounded-sm shadow-2xl shadow-green-600"
+        />
+      </div>
+
+      <div className="overflow-x-auto mt-10 shadow-md shadow-green-600 rounded-md">
         <h2 className="text-xl md:text-4xl text-center text-green-600 font-semibold">
           My Garden Tips
         </h2>

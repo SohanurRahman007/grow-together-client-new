@@ -13,7 +13,7 @@ const OurMission = () => {
         <h3 className="text-2xl md:text-4xl font-semibold mb-2 text-center text-green-700">
           Our Mission
         </h3>
-        <p className="max-w-3xl text-center mx-auto text-gray-700 dark:text-gray-300 text-sm">
+        <p className="max-w-3xl text-center mx-auto text-sm">
           We are dedicated to promoting a greener planet through community tree
           planting, sustainable gardening practices, and spreading awareness
           about the importance of nature conservation for future generations.

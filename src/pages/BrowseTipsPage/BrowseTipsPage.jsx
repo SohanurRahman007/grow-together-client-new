@@ -7,22 +7,32 @@ import { Helmet } from "react-helmet-async";
 
 const BrowseTipsPage = () => {
   const [tips, setTips] = useState([]);
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const { loading } = useContext(AuthContext);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/shareTip/availability")
+  const fetchTips = (difficulty = "") => {
+    let url = "http://localhost:3000/shareTip/availability";
+    if (difficulty) {
+      url += `?difficulty=${difficulty}`;
+    }
+    fetch(url)
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setTips(data);
-      })
-      .catch((err) => {
-        console.error("Error fetching tips:", err);
-      });
+      .then((data) => setTips(data))
+      .catch((err) => console.error("Error fetching tips:", err));
+  };
+
+  useEffect(() => {
+    fetchTips(); // fetch all tips initially
   }, []);
 
+  const handleFilterChange = (e) => {
+    const value = e.target.value;
+    setSelectedDifficulty(value);
+    fetchTips(value);
+  };
+
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
 
   return (
@@ -30,9 +40,23 @@ const BrowseTipsPage = () => {
       <Helmet>
         <title>GrowTogether | GardenTip</title>
       </Helmet>
+
+      <div className="my-4 text-gray-600 text-xl font-semibold">
+        <label className="mr-2 font-semibold">Filter by Difficulty:</label>
+        <select
+          value={selectedDifficulty}
+          onChange={handleFilterChange}
+          className="border border-green-600 rounded p-2"
+        >
+          <option value="">All</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th>No</th>
@@ -43,7 +67,6 @@ const BrowseTipsPage = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row  */}
             {tips.map((item, index) => (
               <tr key={item._id}>
                 <th>{index + 1}</th>
@@ -61,9 +84,9 @@ const BrowseTipsPage = () => {
                 <th>
                   <Link
                     to={`/TipDetailsPage/${item._id}`}
-                    className="btn btn-ghost btn-xs"
+                    className="btn btn-ghost btn-xs border-green-600"
                   >
-                    <IoEye />
+                    <IoEye size={20} className="text-green-600" />
                   </Link>
                 </th>
               </tr>

@@ -36,6 +36,14 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink
+          to="/exploreGardener"
+          className="text-md font-semibold navLink"
+        >
+          Explore Gardeners
+        </NavLink>
+      </li>
+      <li>
         <NavLink to="/browseTipsPage" className="text-md font-semibold navLink">
           Browse Tips Page
         </NavLink>
@@ -49,19 +57,13 @@ const Navbar = () => {
         </li>
       )}
 
-      <li>
-        <NavLink
-          to="/exploreGardener"
-          className="text-md font-semibold navLink"
-        >
-          Explore Gardeners
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/myTipsPage" className="text-md font-semibold navLink">
-          My Tips page
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink to="/myTipsPage" className="text-md font-semibold navLink">
+            My Tips page
+          </NavLink>
+        </li>
+      )}
     </>
   );
 

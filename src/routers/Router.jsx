@@ -21,7 +21,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/gardeners/active"),
+        loader: () =>
+          fetch("https://green-connect-server-one.vercel.app/gardeners/active"),
         Component: Home,
       },
       {
@@ -30,7 +31,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/exploreGardener",
-        loader: () => fetch("http://localhost:3000/gardeners"),
+        loader: () =>
+          fetch("https://green-connect-server-one.vercel.app/gardeners"),
         Component: ExploreGardener,
       },
       {
@@ -40,7 +42,9 @@ export const router = createBrowserRouter([
       {
         path: "/TipDetailsPage/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/shareTip/availability/${params.id}`),
+          fetch(
+            `https://green-connect-server-one.vercel.app/shareTip/availability/${params.id}`
+          ),
         element: (
           <PrivetRoute>
             <TipDetailsPage />

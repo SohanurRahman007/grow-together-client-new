@@ -64,7 +64,9 @@ const TipDetailsPage = () => {
             className="object-cover w-full mb-4 h-60 sm:h-96 "
           />
           <div className="flex justify-between">
-            <h2 className="mb-1 text-xl font-semibold">{tip.title}</h2>
+            <h2 className="mb-1 text-xl font-semibold text-green-600">
+              {tip.title}
+            </h2>
             <p>
               <button className="btn">
                 <AiFillLike className="text-green-600" size={20} />

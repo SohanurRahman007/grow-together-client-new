@@ -1,12 +1,21 @@
-# React + Vite
+# 🌱 Garden Tips Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🔗 Live Site: [https://your-garden-tips-site.web.app](https://your-garden-tips-site.web.app)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Features
 
-## Expanding the ESLint configuration
+- 🔐 **User Authentication** using Firebase (Email/Password & Google Sign-in)
+- 🌿 **Post and Share Gardening Tips** (with image, description, difficulty, etc.)
+- 🔍 **Filter and Browse Tips** by category, difficulty, or plant type
+- 🔒 **Private Routes** for protected pages (like user dashboard)
+- ✍️ **CRUD Operations**: Users can create, read, update, and delete their tips
+- 🌓 **Dark & Light Mode Support**
+- 📱 **Responsive Design** for mobile and desktop views
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📖 Project Description
+
+This is a full-featured gardening tips web app where users can share and explore useful tips about plant care, indoor/outdoor gardening, composting, and more. It includes authentication, live tip filtering, and CRUD functionality using Firebase and MongoDB. The UI is built with Tailwind CSS and fully responsive across all devices.

@@ -11,7 +11,9 @@ const MyTipsPage = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/shareTip/myTips?email=${user.email}`)
+      fetch(
+        `https://green-connect-server-one.vercel.app/shareTip/myTips?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => setMyTips(data))
         .catch((err) => console.error("Error fetching my tips:", err));
@@ -33,7 +35,7 @@ const MyTipsPage = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/shareTip/${id}`, {
+        fetch(`https://green-connect-server-one.vercel.app/shareTip/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

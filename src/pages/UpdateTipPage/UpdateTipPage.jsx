@@ -9,7 +9,9 @@ const UpdateTipPage = () => {
   const [tip, setTip] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/shareTip/availability/${id}`)
+    fetch(
+      `https://green-connect-server-one.vercel.app/shareTip/availability/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setTip(data));
   }, [id]);
@@ -28,7 +30,7 @@ const UpdateTipPage = () => {
       description: form.description.value,
     };
 
-    fetch(`http://localhost:3000/shareTip/${id}`, {
+    fetch(`https://green-connect-server-one.vercel.app/shareTip/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

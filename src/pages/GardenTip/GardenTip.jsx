@@ -17,7 +17,7 @@ const GardenTip = () => {
     const form = e.target;
     const formData = new FormData(form);
     const newUser = Object.fromEntries(formData.entries());
-    fetch("http://localhost:3000/shareTip", {
+    fetch("https://green-connect-server-one.vercel.app/shareTip", {
       method: "POST",
       headers: {
         "content-type": "application/json",

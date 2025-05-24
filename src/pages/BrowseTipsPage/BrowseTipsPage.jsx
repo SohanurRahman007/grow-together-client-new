@@ -11,7 +11,8 @@ const BrowseTipsPage = () => {
   const { loading } = useContext(AuthContext);
 
   const fetchTips = (difficulty = "") => {
-    let url = "http://localhost:3000/shareTip/availability";
+    let url =
+      "https://green-connect-server-one.vercel.app/shareTip/availability";
     if (difficulty) {
       url += `?difficulty=${difficulty}`;
       console.log("Fetching URL:", url);

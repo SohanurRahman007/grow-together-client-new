@@ -55,7 +55,7 @@ const BrowseTipsPage = () => {
         <h2 className="text-2xl md:text-4xl font-semibold text-center text-green-600 mt-10">
           Discover Gardening Tips
         </h2>
-        <p className="text-sm text-center text-gray-700 dark:text-gray-200 max-w-xl mx-auto mt-4">
+        <p className="text-sm text-center max-w-xl mx-auto mt-4">
           Explore a curated collection of gardening tips tailored for all
           difficulty levels—from easy to hard. Grow your green thumb with
           GrowTogether!

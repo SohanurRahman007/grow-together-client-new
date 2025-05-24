@@ -27,7 +27,7 @@ const Banner = () => {
             />
           </span>
         </h2>
-        <p className="text-sm  text-gray-700 dark:text-white max-w-xl mx-auto mt-4">
+        <p className="text-sm text-center w-4xl  mb-6 max-w-xl mx-auto mt-4">
           Join us as we celebrate nature with a variety of events including
           planting trees, selling plants, maintaining gardens, and spreading
           awareness about eco-friendly living. Let’s grow a greener future

@@ -20,6 +20,14 @@ const TipDetailsPage = () => {
         <title>GrowTogether | Tip Details</title>
       </Helmet>
 
+      <div className="mt-10 mb-6">
+        <img
+          src="https://i.ibb.co/SDjYDr9c/images-3.jpg"
+          alt=""
+          className="min-w-full object-cover bg-cover h-80 rounded-sm shadow-2xl shadow-green-600"
+        />
+      </div>
+
       <div>
         <h1 className="text-xl md:text-4xl text-center text-green-600 font-semibold">
           Tip Overview - Learn & Grow

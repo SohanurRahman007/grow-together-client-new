@@ -1,8 +1,6 @@
 # 🌱 Garden Tips Web Application
 
-### 🔗 Live Site: [https://your-garden-tips-site.web.app](https://your-garden-tips-site.web.app)
-
----
+### 🔗 Live Site: [https://grow-together-auth.web.app/]
 
 ## ✅ Features
 

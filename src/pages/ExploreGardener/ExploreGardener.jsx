@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router";
+import { AuthContext } from "../../provider/AuthProvider";
+import Loading from "../../components/Loading/Loading";
 
 const ExploreGardener = () => {
   const allGardenerData = useLoaderData();
+
+  const { loading } = useContext(AuthContext);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="container mx-auto mt-15 mb-15">

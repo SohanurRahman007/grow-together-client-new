@@ -5,10 +5,12 @@ import Footer from "../pages/Shared/Footer/Footer";
 
 const MainLayouts = () => {
   return (
-    <div className="md:w-7xl mx-auto">
+    <div>
       <Navbar></Navbar>
-      <div className="min-h-[calc(100vh-160px)]">
-        <Outlet></Outlet>
+      <div className="md:w-7xl mx-auto">
+        <div className="min-h-[calc(100vh-160px)]">
+          <Outlet></Outlet>
+        </div>
       </div>
       <Footer></Footer>
     </div>

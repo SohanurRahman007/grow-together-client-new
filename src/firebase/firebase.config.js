@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_apiKey,
-  authDomain: import.meta.env.VITE_authDomain,
-  projectId: import.meta.env.VITE_projectId,
-  storageBucket: import.meta.env.VITE_storageBucket,
-  messagingSenderId: import.meta.env.VITE_messagingSenderId,
-  appId: import.meta.env.VITE_appId,
+  apiKey: "AIzaSyCiiZYBb5_FVXBmnzX0dyiSwf8Kju18JOc",
+  authDomain: "gro-together-new.firebaseapp.com",
+  projectId: "gro-together-new",
+  storageBucket: "gro-together-new.firebasestorage.app",
+  messagingSenderId: "657456227132",
+  appId: "1:657456227132:web:e6a7bf0a0c9c11a9727439",
 };
 
 // Initialize Firebase

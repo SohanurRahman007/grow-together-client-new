@@ -1,4 +1,5 @@
 import React from "react";
+import { TbHomeFilled } from "react-icons/tb";
 
 const Footer = () => {
   return (
@@ -8,14 +9,10 @@ const Footer = () => {
           <a
             rel="noopener noreferrer"
             href="#"
-            className="flex justify-center space-x-3 lg:justify-start"
+            className="flex justify-center  lg:justify-start"
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-              <img
-                src="https://i.ibb.co/cKNT2Mhd/logo.png"
-                className="h-14 w-14"
-                alt=""
-              />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full ">
+              <TbHomeFilled className="text-green-600 text-5xl" />
             </div>
             <span className="self-center text-2xl font-semibold">
               <span className="font-bold"> Grow</span>
